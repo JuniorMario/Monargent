@@ -1,56 +1,27 @@
 const db = require('../db/mongo')
 const calcService = require('../services/calc.service')
-
-exports.insertIncome = async (req, res, next) => {
-    const income = req.body 
-   
-    db.insertIncome(income, (err, result) => {
-        if (err) return err
-        else res.json(result)
-    }) 
+const incomeService = require('../services/income.service')
+exports.insertIncome = async (req, res, next) => { 
+    incomeService.insertIncome(req.body, res)
 }
 
 exports.getIncome = async (req, res, next) => {
-    db.findIncome(req.params.id, (err, doc) => {
-        if (err) res.status(500).json(err)
-        else res.json(doc)
-    })
+    incomeService.getIncome(req.params.id, res)
 }
 
 exports.getIncomes = async(req, res, next) => {
-    db.findAllIncomes((err, docs) => {
-        if (err)  {
-            res.status(500).json(err)
-        }
-        else  {
-            res.json(docs)
-        }
-})
+    incomeService.getAllIncomes(res)
 }
 
 exports.deleteIncome = async (req, res, next) => {
-    const id = req.params.id
-    db.deleteIncome(id, (err, result) => {
-        if (err) res.status(500).json(err)
-        else res.json({ message: 'Income sucessfully deleted!' })
-    })
+    incomeService.deleteIncome(req.params.id, res)
 }
 
 exports.calcIncomes = async (req, res, next) => {
-    db.findAllIncomes((err, docs) => {
-        if (err)  {
-            res.status(500).json(err)
-        }
-        else {     
-            res.json(calcService.calcAll(docs))
-        }
-    })
+    incomeService.calcIncome(res)
 }
 
 exports.updateIncome = async (req, res, next) => {
-    const updated = req.body
-    db.updateIncome(req.params.id, updated, (err, result) => {
-        if (err) res.status(400).json(err)
-        else res.json("Income sucessfully updated!")
-    })
+    incomeService.updateIncome(req.params.id, req.body, res)
+
 }
