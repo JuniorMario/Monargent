@@ -37,6 +37,12 @@ router.delete('/expenses/delete/:id', parse('expenses@deleteExpense'))
 //Operations routes
 router.get('/leftover', parse('operations@calcLeft'))
 
+//Category routes 
+router.post('/category', parse('categories@createCategory'))
+router.get('/categories', parse('categories@getCategories'))
+router.get('/category/:name', parse('categories@findCategory'))
+router.delete('/category/:id', parse('categories@deleteCategory'))
+router.put('/category/:name', parse('categories@updateCategory'))
 
 // View routes
 router.get('/', parse('view@index'))
