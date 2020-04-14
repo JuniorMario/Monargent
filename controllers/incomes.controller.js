@@ -46,3 +46,11 @@ exports.calcIncomes = async (req, res, next) => {
         }
     })
 }
+
+exports.updateIncome = async (req, res, next) => {
+    const updated = req.body
+    db.updateIncome(req.params.id, updated, (err, result) => {
+        if (err) res.status(400).json(err)
+        else res.json("Income sucessfully updated!")
+    })
+}

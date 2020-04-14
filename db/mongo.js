@@ -54,6 +54,15 @@ function updateCategory(name, item, callback) {
     global.conn.collection('categories').update({name : name}, { $set: item }, callback)
 }
 
+
+function updateIncome(id, item, callback) {
+    global.conn.collection('incomes').update({_id : new ObjectId(id)}, { $set: item }, callback)
+}
+
+function updateExpense(id, item, callback) {
+    global.conn.collection('expenses').update({ _id : new ObjectId(id)}, { $set: item }, callback)
+}
+
 function deleteExpense(id, callback) {
     global.conn.collection('expenses').deleteOne({ _id: new ObjectId(id) }, callback)
 }
@@ -70,5 +79,6 @@ module.exports = {
     insertExpense, updateCustomer,
     patchCustomer, deleteExpense, deleteIncome,
     insertIncome, findIncome, findAllIncomes, insertCategory,
-    getAllCategories, findCategory, deleteCategory, updateCategory
+    getAllCategories, findCategory, deleteCategory, updateCategory,
+    updateIncome, updateExpense
 }

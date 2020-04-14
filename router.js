@@ -26,6 +26,7 @@ router.get('/income/:id', parse('incomes@getIncome'))
 router.get('/incomes', parse('incomes@getIncomes'))
 router.get('/incomes/calc', parse('incomes@calcIncomes'))
 router.delete('/incomes/delete/:id', parse('incomes@deleteIncome'))
+router.put('/income/:id', parse('incomes@updateIncome'))
 
 // Expenses routes
 router.post('/add_expense', parse('expenses@insertExpense'))
@@ -33,6 +34,7 @@ router.get('/expense/:id', parse('expenses@findExpense'))
 router.get('/expenses', parse('expenses@findAllExpenses'))
 router.get('/expenses/calc', parse('expenses@calcExpenses'))
 router.delete('/expenses/delete/:id', parse('expenses@deleteExpense'))
+router.put('/expense/:id', parse('expenses@updateExpense'))
 
 //Operations routes
 router.get('/leftover', parse('operations@calcLeft'))

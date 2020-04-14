@@ -1,48 +1,27 @@
 const db = require('../db/mongo')
-const calcService = require('../services/calc.service')
-
+const expenseService = require('../services/expense.service')
 exports.insertExpense = async(req, res, next) => {
     const expense = req.body 
-    db.insertExpense(expense, (err, result) => {
-        if (err) res.status(500).json(err)
-        else res.json(result)
-    }) 
+    expenseService.insertExpense(expense, res)
+  
 }
 
 exports.findExpense = async(req, res, next) => {
-    db.findExpense(req.params.id, (err, doc) => {
-        if (err) res.status(500).json(err)
-        else res.json(doc)
-        })
+    expenseService.findExpense(req.params.id, res)
 }
 
 exports.findAllExpenses = async (req, res, next) => {
-    db.findAllExpenses((err, docs) => {
-        if (err)  {
-            res.status(500).json(err)
-        }
-        else  {
-            res.json(docs)
-        }
-    })
+    expenseService.findAllExpenses(res)
 }
 
 exports.deleteExpense = async(req, res, next) => {
-    const id = req.params.id
-    global.db.deleteExpense(id, (err, result) => {
-        if (err) res.status(500).json(err)
-        else res.json({ message: 'Expense sucessfully deleted!' })
-    })
+    expenseService.deleteExpense(req.params.id, res)
 }
 
 exports.calcExpenses = async (req, res, next) => {
-    db.findAllExpenses((err, docs) => {
-        if (err)  {
-            res.status(500).json(err)
-        }
-        else {
-            res.json(calcService.calcAll(docs))
-        }
-    })
+    expenseService.calcExpenses(res)
 }
 
+exports.updateExpense = async (req, res, next) => {
+    expenseService.updateExpense(req.params.id, req.body, res)
+}
