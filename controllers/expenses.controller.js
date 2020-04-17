@@ -12,15 +12,12 @@ exports.findExpense = async(req, res, next) => {
 
 exports.findAllExpenses = async (req, res, next) => {
     const result =  await expenseService.findAllExpenses()
-    if (result.err) {
-        res.status('401').json('Não foi possível obter as expenses.')
-    }
     res.json(result)
 }
 
 exports.deleteExpense = async(req, res, next) => {
-    const result = await expenseService.deleteExpense(req.params.id)
-    if (result.err) {
+    const {result} = await expenseService.deleteExpense(req.params.id)
+    if (result.n == 0) {
         res.status('401').json('Não foi possível deletar a expense.')
     }
     res.json('Expense deletada com sucesso!')
@@ -32,9 +29,10 @@ exports.calcExpenses = async (req, res, next) => {
 }
 
 exports.updateExpense = async (req, res, next) => {
-    const result = await expenseService.updateExpense(req.params.id, req.body)
-    if (result.err) {
-        res.status('401').json('Não foi possível deletar a expense.')
+    const {result} = await expenseService.updateExpense(req.params.id, req.body)
+    if (result.nModified == 0) {
+        res.status('401').json('Não foi possível atualizar a expense.')
     }
+
     res.json("Expense atualizada com sucesso.")
 }
