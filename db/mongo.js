@@ -2,83 +2,75 @@ const mongoClient = require("mongodb").MongoClient
 const ObjectId = require("mongodb").ObjectId
 
 
-mongoClient.connect("mongodb://localhost:27018/datab")
+mongoClient.connect("mongodb://localhost:3001/datab")
     .then(conn => global.conn = conn.db("datab"))
     .catch(err => console.log(err))
 
-function findAllExpenses(callback) {
-    global.conn.collection('expenses').find().toArray(callback)
+exports.findAllExpenses  = async() => {
+    return  await global.conn.collection('expenses').find().toArray()
 }
 
-function findExpense(id, callback) {
-    global.conn.collection('expenses').findOne(new ObjectId(id), callback)
+exports.findExpense = async(id) => {
+    return  await global.conn.collection('expenses').findOne(new ObjectId(id))
 }
 
-function  findAllIncomes(callback) {
-    global.conn.collection('incomes').find().toArray(callback)
+exports.findAllIncomes = async() => {
+    return  await global.conn.collection('incomes').find().toArray()
 }
 
-function findIncome(id, callback) {
-    global.conn.collection('incomes').findOne(new ObjectId(id), callback)
+exports.findIncome = async(id) => {
+    return  await global.conn.collection('incomes').findOne(new ObjectId(id))
 }
 
-function findCategory(name, callback) {
-    global.conn.collection('categories').findOne({name: name}, callback)
+exports.findCategory = async(name) => {
+    return  await global.conn.collection('categories').findOne({name: name})
 }
 
-function  getAllCategories(callback) {
-    global.conn.collection('categories').find().toArray(callback)
+exports.getAllCategories = async() => {
+    return  await global.conn.collection('categories').find().toArray()
 }
 
-function insertExpense(expense, callback) {
-    global.conn.collection('expenses').insert(expense, callback)
+exports.insertExpense = async(expense) => {
+    return  await global.conn.collection('expenses').insert(expense)
 }
-function insertIncome(expense, callback) {
-    global.conn.collection('incomes').insert(expense, callback)
-}
-
-function insertCategory(expense, callback) {
-    global.conn.collection('categories').insert(expense, callback)
+exports.insertIncome = async(expense) => {
+    return  await global.conn.collection('incomes').insert(expense)
 }
 
-function patchCustomer(id, updates, callback) {
-    global.conn.collection('customers').update({ _id: new ObjectId(id) }, { $set: updates }, callback)
+exports.insertCategory = async(expense) =>  {
+    return  await global.conn.collection('categories').insert(expense)
 }
 
-function updateCustomer(id, customer, callback) {
-    global.conn.collection('customers').update({ _id: new ObjectId(id) }, customer, callback)
+exports.patchCustomer = async(id, updates) => {
+    return  await global.conn.collection('customers').update({ _id: new ObjectId(id) }, { $set: updates }, callback)
 }
 
-
-function updateCategory(name, item, callback) {
-    global.conn.collection('categories').update({name : name}, { $set: item }, callback)
+exports.updateCustomer = async(id, customer) => {
+    return  await global.conn.collection('customers').update({ _id: new ObjectId(id) }, customer)
 }
 
 
-function updateIncome(id, item, callback) {
-    global.conn.collection('incomes').update({_id : new ObjectId(id)}, { $set: item }, callback)
+exports.updateCategory = async(name, item) => {
+    return  await global.conn.collection('categories').update({name : name}, { $set: item })
 }
 
-function updateExpense(id, item, callback) {
-    global.conn.collection('expenses').update({ _id : new ObjectId(id)}, { $set: item }, callback)
+
+exports.updateIncome = async(id, item) => {
+    return  await global.conn.collection('incomes').update({_id : new ObjectId(id)}, { $set: item })
 }
 
-function deleteExpense(id, callback) {
-    global.conn.collection('expenses').deleteOne({ _id: new ObjectId(id) }, callback)
+exports.updateExpense = async (id, item) => {
+    return  await global.conn.collection('expenses').update({ _id : new ObjectId(id)}, { $set: item })
 }
 
-function deleteIncome(id, callback) {
-    global.conn.collection('incomes').deleteOne({ _id: new ObjectId(id) }, callback)
+exports.deleteExpense = async(id) => {
+    return  await global.conn.collection('expenses').deleteOne({ _id: new ObjectId(id) })
 }
 
-function deleteCategory(id, callback) {
-    global.conn.collection('categories').deleteOne({ _id: new ObjectId(id) }, callback)
+exports.deleteIncome = async(id, callback) => {
+    return  await global.conn.collection('incomes').deleteOne({ _id: new ObjectId(id) })
 }
-module.exports = {
-    findAllExpenses, findExpense,
-    insertExpense, updateCustomer,
-    patchCustomer, deleteExpense, deleteIncome,
-    insertIncome, findIncome, findAllIncomes, insertCategory,
-    getAllCategories, findCategory, deleteCategory, updateCategory,
-    updateIncome, updateExpense
+
+exports.deleteCategory = async(id) => {
+    return  await global.conn.collection('categories').deleteOne({ _id: new ObjectId(id) })
 }
