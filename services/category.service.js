@@ -1,41 +1,27 @@
 const db = require('../db/mongo')
 const calcService = require('../services/calc.service')
 
-exports.createCategory = async(category, res) => {
-    db.insertCategory(category, (err, result) => {
-        if (err) res.status(400).json(err)
-        else res.json(result)
-    })
+exports.createCategory = async(category) => {
+    const result = await db.insertCategory(category)
+    return result
 }
 
-exports.getCategories = async(res) => {
-    db.getAllCategories((err, docs) => {
-        if (err)  {
-            res.status(500).json(err)
-        }
-        else  {
-            res.json(docs)
-        }
-    })
+exports.getCategories = async() => {
+    const result = await db.getAllCategories()
+    return result
 }
 
-exports.findCategory = async(name, res) => {
-    db.findCategory(name, (err, doc) => {
-        if (err) res.status(500).json(err)
-        else res.json(doc)
-    })
+exports.findCategory = async(name) => {
+    const result = await db.findCategory(name)
+    return result
 }
 
-exports.deleteCategory = async(id, res) => {
-    db.deleteCategory(id, (err, result) => {
-        if (err) res.status(500).json(err)
-        else res.json({ message: 'Category sucessfully deleted!' })
-    })
+exports.deleteCategory = async(id) => {
+    const result = await db.deleteCategory(id)
+    return result
 }
 
-exports.updateCategory = async(name, item, res) => {
-    db.updateCategory(name, item, (err, result) => {
-        if (err) res.status(400).json(err)
-        else res.json("Category sucessfully updated!")
-    })
+exports.updateCategory = async(name, item) => {
+    const result = await db.updateCategory(name, item)
+    return result
 }
