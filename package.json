@@ -20,6 +20,7 @@
     "node-uuid": "^1.4.8",
     "pug": "^2.0.4",
     "swagger-ui-express": "^4.1.4",
-    "sync-request": "^6.1.0"
+    "sync-request": "^6.1.0",
+    "xlsx-populate": "^1.21.0"
   }
 }

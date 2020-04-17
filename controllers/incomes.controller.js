@@ -1,6 +1,5 @@
-const db = require('../db/mongo')
-const calcService = require('../services/calc.service')
 const incomeService = require('../services/income.service')
+
 exports.insertIncome = async (req, res, next) => { 
     const result = await incomeService.insertIncome(req.body)
     return res.json(result)

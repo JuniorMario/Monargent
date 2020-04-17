@@ -48,4 +48,7 @@ router.put('/category/:name', parse('categories@updateCategory'))
 
 // View routes
 router.get('/', parse('view@index'))
+
+
+router.get('/spreadsheets/incomes', parse('spreadsheets@incomeSheets'))
 module.exports = router;
