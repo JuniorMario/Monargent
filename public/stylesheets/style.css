@@ -1,8 +1,42 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+input[type=text] {
+  width: 400px;
+  padding: 12px 20px 12px 40px;
+  font-size: 16px;
+  margin-top: 8px;
+  margin-left: 50px;
+  box-sizing: border-box;
+  border: 2px solid blue;
+  border-radius: 20px;
+
+  background-color: #DCDCDC;
+  color: black;
+
 }
 
-a {
-  color: #00B7FF;
+
+input:focus,
+textarea:focus {
+
+  border-color: #000;
+}
+
+.hehe {
+  margin-top: 10px;
+}
+.hehe label {
+  margin-left: 50px;
+}
+.hehe button {
+  margin-left: 50px;
+}
+
+.formulario {
+  align-items: center;
+  border: 2px solid #000;
+  padding: 10px;
+  border-radius: 25px;
+  width: 500px;
+  margin-top: 50px;
+  margin-left: 350px;
 }
