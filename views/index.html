@@ -1,70 +1,44 @@
 <html>
-    <head>  
-        <title>
-            exemplo
-        </title>
-        <style>
-            input[type=text] {
-                        width: 50%;
-                        padding: 12px 20px 12px 40px;
-                        font-size: 16px;
-                        margin: 8px 0;
-                        box-sizing: border-box;
-                   
-                        border: 2px solid blue;
-                        border-radius: 20px;
-                    
-                        background-color: #DCDCDC;
-                        color: black;
-                        
-                    }  
 
-                    input[type=text], select, textarea {
-                            width: 50%;
-                            padding: 12px;
-                            border: 1px solid #ccc;
-                            border-radius: 4px;
-                            resize: none;
-                        }
+<head>
+    <title>
+        exemplo
+    </title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+</head>
 
-                        input:focus, textarea:focus {
-                            
-                                border-color: #000;
-                            }
-              
-        </style>
-    </head>
-   
 
-    <body>
-        <form>
-        
-            <div>  
+<body>
+    
+    <form>
+     
+        <div class="formulario">
+            <div class="hehe">
                 <label for="name">Name:</label>
-                <input type="text" id="name" placeholder="Digite seu nome.."/>
+           
             </div>
+            <input type="text" id="name" placeholder="Income name.." />
 
-            
-            <div>
+            <div class="hehe">
                 <label for="value">Value:</label>
-                <input type="text" id="value" placeholder="Digite o valor.."/>
             </div>
+            <input type="text" id="value" placeholder="Income value.." />
 
-            <div>
+            <div class="hehe">
                 <label for="category">Category:</label>
-                <input type="text" name="category" id="category" placeholder="Categoria.."/>
             </div>
+            <input type="text" name="category" id="category" placeholder="Category.." />
 
-            <div>
+            <div class="hehe">
                 <label class="description" for="description">Descrição:</label>
-                <input name="description" id="msg" cols="30 rows=">
             </div>
+            <input type="text" name="category" id="category" placeholder="Description.." />
 
-            <div class="button">
-                <button type="Submit">Enviar dados</button>   
+            <div class="hehe">
+                <button type="Submit">Enviar dados</button>
             </div>
+        </div>
+    </form>
+</body>
 
-        </form>
-    </body>
 </html>
-

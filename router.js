@@ -22,6 +22,7 @@ console.log('Starting routes...')
 
 // Incomes routes
 router.post('/add_income', parse('incomes@insertIncome'))
+router.get('/add_income', parse('incomes@renderAdd'))
 router.get('/income/:id', parse('incomes@getIncome'))
 router.get('/incomes', parse('incomes@getIncomes'))
 router.get('/incomes/calc', parse('incomes@calcIncomes'))
@@ -30,6 +31,7 @@ router.put('/income/:id', parse('incomes@updateIncome'))
 
 // Expenses routes
 router.post('/add_expense', parse('expenses@insertExpense'))
+router.get('/add_expense', parse('expenses@renderAdd'))
 router.get('/expense/:id', parse('expenses@findExpense'))
 router.get('/expenses', parse('expenses@findAllExpenses'))
 router.get('/expenses/calc', parse('expenses@calcExpenses'))

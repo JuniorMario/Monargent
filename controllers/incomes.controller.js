@@ -1,10 +1,15 @@
 const incomeService = require('../services/income.service')
+const path = require('path')
 
 exports.insertIncome = async (req, res, next) => { 
     const result = await incomeService.insertIncome(req.body)
+    res.render("income", {msg: "Income was successfully added!"})
     return res.json(result)
 }
 
+exports.renderAdd = async(req, res, next) => {
+    res.render('income', {msg:""})
+}
 exports.getIncome = async (req, res, next) => {
     const result = await incomeService.getIncome(req.params.id)
     return res.json(result)
