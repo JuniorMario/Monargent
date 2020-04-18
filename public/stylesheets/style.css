@@ -20,14 +20,22 @@ textarea:focus {
 
   border-color: #000;
 }
-
-.hehe {
-  margin-top: 10px;
-}
-.hehe label {
+.msg {
   margin-left: 50px;
 }
-.hehe button {
+.title {
+  margin-top: 50px;
+  font-family: bold;
+  font-size: 30px;
+  margin-left: 550px;
+}
+.block {
+  margin-top: 10px;
+}
+.block label {
+  margin-left: 50px;
+}
+.block button {
   margin-left: 50px;
 }
 
@@ -37,6 +45,6 @@ textarea:focus {
   padding: 10px;
   border-radius: 25px;
   width: 500px;
-  margin-top: 50px;
+  margin-top: 20px;
   margin-left: 350px;
 }
