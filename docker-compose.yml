@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+  app:
+    container_name: app
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    ports:
+      - "3000:3000"
+    build:
+      context: .
+    depends_on: 
+      - mongo
+    links:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment: 
+      - MONGO_INITDB_DATABASE=datab
+    volumes: 
+      - ./datab:/data/db
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo-js:ro
