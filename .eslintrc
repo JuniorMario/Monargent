@@ -1,0 +1,154 @@
+{
+    "extends": [
+        "airbnb-base"
+    ],
+    "plugins": [
+        "import"
+    ],
+    "rules": {
+        "camelcase": "off",
+        "no-plusplus": "off",
+        "strict": "off",
+        "radix": "off",
+        "eqeqeq": "off",
+        "curly": ["error", "all"],
+        "padding-line-between-statements": [
+            "error",
+            { "blankLine": "always", "prev": "block-like", "next": "*" },
+            { "blankLine": "always", "prev": "*", "next": "block-like" },
+            { "blankLine": "always", "prev": "*", "next": "directive" },
+            { "blankLine": "always", "prev": "*", "next": "return" }
+        ],
+        "object-curly-newline": [
+            "error",
+            {
+                "multiline": true,
+                "minProperties": 3
+            }
+        ],
+        "no-param-reassign": "off",
+        "semi": "off",
+        "no-await-in-loop": "off",
+        "max-len": [
+            "error",
+            {
+                "code": 200
+            }
+        ],
+        "no-continue": "off",
+        "no-restricted-syntax": "off",
+        "no-mixed-operators": [
+            "error",
+            {
+                "groups": [
+                    [
+                        "%",
+                        "**"
+                    ],
+                    [
+                        "%",
+                        "+"
+                    ],
+                    [
+                        "%",
+                        "-"
+                    ],
+                    [
+                        "%",
+                        "*"
+                    ],
+                    [
+                        "%",
+                        "/"
+                    ],
+                    [
+                        "**",
+                        "+"
+                    ],
+                    [
+                        "**",
+                        "-"
+                    ],
+                    [
+                        "**",
+                        "*"
+                    ],
+                    [
+                        "**",
+                        "/"
+                    ],
+                    [
+                        "&",
+                        "|",
+                        "^",
+                        "~",
+                        "<<",
+                        ">>",
+                        ">>>"
+                    ],
+                    [
+                        "==",
+                        "!=",
+                        "===",
+                        "!==",
+                        ">",
+                        ">=",
+                        "<",
+                        "<="
+                    ],
+                    [
+                        "&&",
+                        "||"
+                    ],
+                    [
+                        "in",
+                        "instanceof"
+                    ]
+                ],
+                "allowSamePrecedence": false
+            }
+        ]
+    },
+    "globals": {
+        "afterAll": true,
+        "beforeAll": true,
+        "beforeEach": true,
+        "describe": true,
+        "expect": true,
+        "test": true,
+        "models": true,
+        "request": true,
+        "clientFactory": true,
+        "partFactory": true,
+        "materialFactory": true,
+        "materialShapeFactory": true,
+        "materialSpecificationFactory": true,
+        "materialAlloyFactory": true,
+        "rawMaterialFactory": true,
+        "programFactory": true,
+        "specialProcessFactory": true,
+        "surfaceTreatmentFactory": true,
+        "componentLabelFactory": true,
+        "locationFactory": true,
+        "partDimensionLengthRangeFactory": true,
+        "partDimensionWideRangeFactory": true,
+        "partDimensionThicknessRangeFactory": true,
+        "partDimensionDiameterRangeFactory": true,
+        "partDimensionPrecastWeightRangeFactory": true,
+        "rawMaterialDimensionLengthRangeFactory": true,
+        "rawMaterialDimensionDiameterRangeFactory": true,
+        "rawMaterialDimensionWidthRangeFactory": true,
+        "rawMaterialDimensionThicknessRangeFactory": true,
+        "rawMaterialDimensionWeightRangeFactory": true,
+        "rawMaterialDimensionWallThicknessRangeFactory": true,
+        "rawMaterialDimensionInternalDiameterRangeFactory": true,
+        "rawMaterialDimensionOuterLengthRangeFactory": true,
+        "rawMaterialDimensionOuterWidthRangeFactory": true,
+        "rawMaterialDimensionOuterThicknessRangeFactory": true,
+        "productionFactory": true,
+        "productionTechnologyFactory": true,
+        "productionMachineFactory": true,
+        "weightService": true,
+        "scoreService": true
+    }
+}
