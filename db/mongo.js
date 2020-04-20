@@ -2,20 +2,20 @@ const mongoClient = require("mongodb").MongoClient
 const ObjectId = require("mongodb").ObjectId
 
 
-mongoClient.connect("mongodb://localhost:3001/datab")
-    .then(conn => global.conn = conn.db("datab"))
+mongoClient.connect("mongodb://mongo:27017/datab")
+    .then(conn => global.conn = conn.db("datab")) 
     .catch(err => console.log(err))
-
+  
 exports.findAllExpenses  = async() => {
     return  await global.conn.collection('expenses').find().toArray()
-}
+} 
 
 exports.findExpense = async(id) => {
     return  await global.conn.collection('expenses').findOne(new ObjectId(id))
 }
 
 exports.findAllIncomes = async() => {
-    return  await global.conn.collection('incomes').find().toArray()
+    return  await global.conn.collection('incomes').find().toArray() 
 }
 
 exports.findIncome = async(id) => {
