@@ -41,6 +41,13 @@ exports.insertCategory = async(expense) =>  {
     return  await global.conn.collection('categories').insert(expense)
 }
 
+exports.insertUser = async(user) =>  {
+    return  await global.conn.collection('users').insert(user)
+}
+
+exports.getAllUsers = async() => {
+    return  await global.conn.collection('users').find().toArray()
+}
 exports.patchCustomer = async(id, updates) => {
     return  await global.conn.collection('customers').update({ _id: new ObjectId(id) }, { $set: updates }, callback)
 }

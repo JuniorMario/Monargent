@@ -10,17 +10,26 @@ services:
       - "3000:3000"
     build:
       context: .
-    depends_on: 
+    environment:
+      - REDIS_URL=redis://cache
+    depends_on:
       - mongo
+      - redis
     links:
       - mongo
+      - redis
   mongo:
     container_name: mongo
     image: mongo
     ports:
       - "27017:27017"
-    environment: 
+    environment:
       - MONGO_INITDB_DATABASE=datab
-    volumes: 
+    volumes:
       - ./datab:/data/db
       - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo-js:ro
+  redis:
+    container_name: cache
+    image: redis
+    expose:
+      - 6379
