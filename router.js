@@ -51,7 +51,12 @@ router.put('/category/:name', parse('categories@updateCategory'))
 // View routes
 router.get('/', parse('view@index'))
 
-//Spreadsheets/expenses
+//Spreadsheets routes
 router.get('/spreadsheets/incomes', parse('spreadsheets@incomeSheets'))
 router.get('/spreadsheets/expenses', parse('spreadsheets@expenseSheets'))
+
+//Auth routes 
+router.post('/auth/register', parse('auth@registerUser'))
+router.post('/auth/login', parse('auth@loginUser'))
+
 module.exports = router;
