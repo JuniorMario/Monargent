@@ -1,5 +1,19 @@
-
 input[type=text] {
+  width: 400px;
+  padding: 12px 20px 12px 40px;
+  font-size: 16px;
+  margin-top: 8px;
+  margin-left: 50px;
+  box-sizing: border-box;
+  border: 2px solid blue;
+  border-radius: 20px;
+
+  background-color: #DCDCDC;
+  color: black;
+
+}
+
+input[type=password] {
   width: 400px;
   padding: 12px 20px 12px 40px;
   font-size: 16px;

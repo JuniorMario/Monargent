@@ -1,19 +1,29 @@
 const authServices = require('../services/auth.service')
-const {ProfileValidator} = require('../validators')
+const {ProfileValidator, ProfileLoginValidator} = require('../validators')
 
 exports.registerUser = async(req, res, next) => {
     const {
         value,
         error,
       } = ProfileValidator.validate(req.body)
+
     if (error) {
-        res.status('401').json('Um ou mais campos são inválidos')
+          return res.status('401').json('Um ou mais campos são inválidos')
     }
     const result = await authServices.insertUser(value)
     return res.json(result)
 }
 
 exports.loginUser = async(req, res, next) => {
+    const {
+        value,
+        error,
+      } = ProfileLoginValidator.validate(req.body)
+    
+    if (error) {
+        return res.status('401').json('Um ou mais campos são inválidos')
+    }
+
    let counter = 0;
    const users = await authServices.findUsers()
    const logged = users.filter(user => {
@@ -30,9 +40,19 @@ exports.loginUser = async(req, res, next) => {
     if (logged){
         req.session.token = await authServices.getToken(req.profile)
         req.session.save()
-        res.json(req.session.token)
+        return res.json(req.session.token)
     }
+    return res.json("A senha e/o email não coincidem com algum usuário cadastrado.")
 
     
 
+}
+
+exports.login = async(req, res, next) => {
+    res.render("login", {msg: ""})
+}
+
+exports.register = async(req, res, next) => {
+    res.render("register", {msg: ""})
+    return res.json(result)
 }

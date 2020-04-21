@@ -1,0 +1,17 @@
+head
+  title
+    | Login
+  link(rel='stylesheet' href='../stylesheets/style.css')
+  script(type='text/javascript' src='../javascripts/main.js')
+  p.title Login
+form(method="POST", action="/auth/login")
+  .formulario
+    .block
+      label(for='email') email:
+    input#name(type='text' name='email' placeholder='E-mail..')
+    .block
+      label(for='password') Password:
+    input#password(type='password' name='password' placeholder='password..')
+    .block
+      button(type='Submit') Login
+    p.msg #{msg}

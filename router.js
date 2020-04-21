@@ -58,5 +58,7 @@ router.get('/spreadsheets/expenses', parse('spreadsheets@expenseSheets'))
 //Auth routes 
 router.post('/auth/register', parse('auth@registerUser'))
 router.post('/auth/login', parse('auth@loginUser'))
+router.get('/auth/login', parse('auth@login'))
+router.get('/auth/register', parse('auth@register'))
 
 module.exports = router;

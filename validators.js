@@ -7,3 +7,8 @@ exports.ProfileValidator = Joi.object({
     password: Joi.string().min(1).max(255).required(),
   }).options({ stripUnknown: true })
 
+  exports.ProfileLoginValidator = Joi.object({
+    email: Joi.string().email().required(),
+    password: Joi.string().min(1).max(255).required(),
+  }).options({ stripUnknown: true })
+

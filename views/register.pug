@@ -1,0 +1,23 @@
+head
+  title
+    | Register
+  link(rel='stylesheet' href='../stylesheets/style.css')
+  script(type='text/javascript' src='../javascripts/main.js')
+  p.title Register
+form(method="POST", action="/auth/register")
+  .formulario
+    .block
+      label(for='name') Name:
+    input#name(type='text' name='name' placeholder='name..')
+    .block
+      label(for='email') E-mail:
+    input#value(type='text' name='email' placeholder='E-mail..')
+    .block
+      label(for='phoneNumber') Phone Number:
+    input#category(type='text' name='phoneNumber' placeholder='(55)9999-9999..')
+    .block
+      label(for='password') Password:
+    input#description(type='password' name='password' placeholder='Password..')
+    .block
+      button(type='Submit') Register
+    p.msg #{msg}
