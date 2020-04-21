@@ -6,8 +6,9 @@ exports.registerUser = async(req, res, next) => {
         value,
         error,
       } = ProfileValidator.validate(req.body)
+
     if (error) {
-        res.status('401').json('Um ou mais campos são inválidos')
+          return res.status('401').json('Um ou mais campos são inválidos')
     }
     const result = await authServices.insertUser(value)
     return res.json(result)
@@ -30,9 +31,19 @@ exports.loginUser = async(req, res, next) => {
     if (logged){
         req.session.token = await authServices.getToken(req.profile)
         req.session.save()
-        res.json(req.session.token)
+        return res.json(req.session.token)
     }
+    return res.json("A senha e o email não coincidem")
 
     
 
+}
+
+exports.login = async(req, res, next) => {
+    res.render("login", {msg: ""})
+}
+
+exports.register = async(req, res, next) => {
+    res.render("register", {msg: ""})
+    return res.json(result)
 }
