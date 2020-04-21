@@ -1,0 +1,249 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(http-equiv='x-ua-compatible' content='ie=edge')
+  title Monargent
+  meta(name='description' content='')
+  meta(name='viewport' content='width=device-width, initial-scale=1')
+  link(rel='manifest' href='site.webmanifest')
+  link(rel='icon' href='../images/favicon.ico' type='image/x-icon')
+  // CSS here
+  link(rel='stylesheet' href='../assets/css/bootstrap.min.css')
+  link(rel='stylesheet' href='../assets/css/owl.carousel.min.css')
+  link(rel='stylesheet' href='../assets/css/slicknav.css')
+  link(rel='stylesheet' href='../assets/css/flaticon.css')
+  link(rel='stylesheet' href='../assets/css/animate.min.css')
+  link(rel='stylesheet' href='../assets/css/magnific-popup.css')
+  link(rel='stylesheet' href='../assets/css/fontawesome-all.min.css')
+  link(rel='stylesheet' href='../assets/css/themify-icons.css')
+  link(rel='stylesheet' href='../assets/css/slick.css')
+  link(rel='stylesheet' href='../assets/css/nice-select.css')
+  link(rel='stylesheet' href='../assets/css/style.css')
+  link(rel='stylesheet' href='../assets/css/login.css')
+
+// Preloader Start
+#preloader-active
+  .preloader.d-flex.align-items-center.justify-content-center
+    .preloader-inner.position-relative
+      .preloader-circle
+      .preloader-img.pere-text
+        img(src='../assets/img/logo/loder.jpg' alt='')
+// Preloader Start
+header
+  // Header Start
+  .header-area.header_area.header-transparent
+    .main-header
+      .header-bottom.header-sticky
+        .container-fluid
+          .row.align-items-center
+            // Logo
+            .col-xl-2.col-lg-1.col-md-1
+              .logo
+                a(href='index.html')
+                  img(src='../assets/img/logo/logo.png' alt='')
+            .col-xl-8.col-lg-8.col-md-8
+              // Main-menu
+              .main-menu.f-right.d-none.d-lg-block
+                nav
+                  ul#navigation
+                    li
+                      a(href='index.html') Home
+                    li
+                      a(href='about.html') About
+                    li
+                      a(href='services.html') Services
+                      ul.submenu
+                        li
+                          a(href='blog.html') API
+                    li
+                      a(href='work.html') Works
+                    li
+                      a(href='blog.html') Blog
+                      ul.submenu
+                        li
+                          a(href='blog.html') Blog
+                        li
+                          a(href='single-blog.html') Blog Details
+                    li
+                      a(href='#') Pages
+                      ul.submenu
+                        li
+                          a(href='elements.html') Element
+                    li
+                      a(href='contact.html') Contact
+            .col-xl-2.col-lg-3.col-md-3
+              .header-right-btn.f-right.d-none.d-lg-block
+                a.btn.header-btn(href='#') Contact Now
+            // Mobile Menu
+            .col-12
+              .mobile_menu.d-block.d-lg-none
+  // Header End
+main
+  // slider Area Start
+  .slider-area.slider-height(data-background='../assets/img/hero/h1_hero.jpg')
+    .slider-active
+      // Single Slider
+      .single-slider
+        //.slider-cap-wrapper
+        .hero__img
+            .formulario
+              form(action="/auth/login" method="POST")  
+                .block    
+                  label(for='email') E-mail:
+                  br
+                input(type='text' name='email')
+                br
+                .block
+                  label(for='password') Password:
+                  br        
+                input(type='password' name='password')
+                br 
+                .block
+                  button(type='Submit') Logar
+
+  
+      // Single Slider
+      .single-slider
+        .slider-cap-wrapper
+          .hero__img
+            img(src='assets/img/hero/hero_img2.jpg' alt='' data-animation='fadeInRight' data-transition-duration='5s')
+          .hero__caption
+            h1(data-animation='fadeInLeft' data-delay='.4s')
+              | Business Synergy via 
+              br
+              | Robust Strategies
+            p(data-animation='fadeInLeft' data-delay='.6s')
+              | Aasrem dfgum dolor sivst amet, consectetur adipisicing elitvde, sed dvo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad micnim veniam, quis nostrud exercita.
+            // Hero Btn
+            a.hero-btn(href='#' data-animation='fadeInLeft' data-delay='.9s')
+              | View project
+              // Arrow SVG icon
+              svg#Capa_1(version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewbox='0 0 512 512' style='enable-background:new 0 0 512 512;' xml:space='preserve')
+                path(d='M506.134,241.843c-0.006-0.006-0.011-0.013-0.018-0.019l-104.504-104c-7.829-7.791-20.492-7.762-28.285,0.068\
+                c-7.792,7.829-7.762,20.492,0.067,28.284L443.558,236H20c-11.046,0-20,8.954-20,20c0,11.046,8.954,20,20,20h423.557\
+                l-70.162,69.824c-7.829,7.792-7.859,20.455-0.067,28.284c7.793,7.831,20.457,7.858,28.285,0.068l104.504-104\
+                c0.006-0.006,0.011-0.013,0.018-0.019C513.968,262.339,513.943,249.635,506.134,241.843z')
+  // slider Area End
+  // Want To Work Start
+  
+  // David Droga End
+  // Want To Work Start
+  .wantToWork-area.wantToWork-area2.w-padding2
+    .container
+      .row.align-items-center.justify-content-between
+        .col-xl-8.col-lg-8.col-md-8
+          .wantToWork-caption.wantToWork-caption2
+            h2 Send us a message if you have an issue with your order.
+        .col-xl-4.col-lg-4.col-md-4
+          a.btn.btn-black.f-right(href='#') contact us now
+  // Want To Work End
+footer
+  // Footer Start
+  .footer-area
+    .container
+      .footer-top.footer-padding
+        .row.justify-content-between
+          .col-xl-4.col-lg-4.col-md-4.col-sm-6
+            .single-footer-caption.mb-50
+              .single-footer-caption.mb-30
+                // logo
+                .footer-logo
+                  a(href='index.html')
+                    img(src='assets/img/logo/logo2_footer.png' alt='')
+          .col-xl-2.col-lg-2.col-md-4.col-sm-6
+            .single-footer-caption.mb-50
+              .footer-tittle
+                h4 Services
+                ul
+                  li
+                    a(href='#') Marketing
+                  li
+                    a(href='#')  SEO Service
+                  li
+                    a(href='#') Digital market
+                  li
+                    a(href='#') Content create
+                  li
+                    a(href='#') Find Us
+          .col-xl-3.col-lg-3.col-md-4.col-sm-6
+            .single-footer-caption.mb-50
+              .footer-tittle
+                h4 Customer Care
+                ul
+                  li
+                    a(href='#') Contact Us
+                  li
+                    a(href='#') About Us
+                  li
+                    a(href='#') News &amp; Articles
+                  li
+                    a(href='#') Privacy Policy
+                  li
+                    a(href='#')  Terms of Use
+          .col-xl-3.col-lg-3.col-md-4.col-sm-6
+            .single-footer-caption.mb-50
+              .footer-tittle
+                h4
+                  span +564
+                  |  7885 3222
+                ul
+                  li
+                    a(href='#') youremail@gmail.com
+                p 123 East 26th Street, Fifth Floor, New York, NY 10011
+              // footer social
+              .footer-social
+                a(href='#')
+                  i.fab.fa-facebook-f
+                a(href='#')
+                  i.fab.fa-twitter
+                a(href='#')
+                  i.fas.fa-globe
+                a(href='#')
+                  i.fab.fa-instagram
+      .footer-bottom
+        .row
+          .col-xl-12
+            .footer-copy-right
+              p
+                // Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+                | Copyright &copy;
+                script.
+                  document.write(new Date().getFullYear());
+                |  All rights reserved | This template is made with 
+                i.fa.fa-heart(aria-hidden='true')
+                |  by 
+                a(href='https://colorlib.com' target='_blank') Colorlib
+                // Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0.
+  // Footer End
+// Scroll Up
+#back-top
+  a(title='Go to Top' href='#')
+    i.fas.fa-level-up-alt
+// JS here
+// All JS Custom Plugins Link Here here
+script(src='../assets/js/vendor/modernizr-3.5.0.min.js')
+// Jquery, Popper, Bootstrap
+script(src='../assets/js/vendor/jquery-1.12.4.min.js')
+script(src='../assets/js/popper.min.js')
+script(src='../assets/js/bootstrap.min.js')
+// Jquery Mobile Menu
+script(src='../assets/js/jquery.slicknav.min.js')
+// Jquery Slick , Owl-Carousel Plugins
+script(src='../assets/js/owl.carousel.min.js')
+script(src='../assets/js/slick.min.js')
+// One Page, Animated-HeadLin
+script(src='../assets/js/wow.min.js')
+script(src='../assets/js/animated.headline.js')
+script(src='../assets/js/jquery.magnific-popup.js')
+// Nice-select, sticky
+script(src='../assets/js/jquery.nice-select.min.js')
+script(src='../assets/js/jquery.sticky.js')
+// contact js
+script(src='../assets/js/contact.js')
+script(src='../assets/js/jquery.form.js')
+script(src='../assets/js/jquery.validate.min.js')
+script(src='../assets/js/mail-script.js')
+script(src='../assets/js/jquery.ajaxchimp.min.js')
+// Jquery Plugins, main Jquery
+script(src='../assets/js/plugins.js')
+script(src='../assets/js/main.js')
