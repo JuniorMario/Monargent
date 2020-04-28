@@ -54,6 +54,7 @@ router.get('/', parse('view@index'))
 //Spreadsheets routes
 router.get('/spreadsheets/incomes', parse('spreadsheets@incomeSheets'))
 router.get('/spreadsheets/expenses', parse('spreadsheets@expenseSheets'))
+router.get('/spreadsheets/general', parse('spreadsheets@generalSheets'))
 
 //Auth routes 
 router.post('/auth/register', parse('auth@registerUser'))
