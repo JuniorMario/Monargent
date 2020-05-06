@@ -4,10 +4,11 @@ FROM keymetrics/pm2:10-alpine
 
 WORKDIR /app
 
-COPY package*.json yarn.lock ./
+COPY package.json yarn.lock ./
 
 
-RUN yarn
+RUN yarn install
+
 
 
 COPY . package.json yarn.lock ecosystem.config.js ./ 
