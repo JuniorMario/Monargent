@@ -15,4 +15,4 @@ COPY . package.json yarn.lock ecosystem.config.js ./
 
 EXPOSE 3000 27017
 
-CMD pm2 start --no-daemon --watch ecosystem.config.js
+CMD node bin/www
