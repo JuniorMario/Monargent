@@ -2,4 +2,4 @@ build:
   docker:
     web: Dockerfile
 run:
-  web: node bin/www
+  web: docker run monargent_app
