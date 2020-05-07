@@ -4,4 +4,7 @@ build:
     redis: Dockerfile.redis
     mongo: Dockerfile.mongo
 run:
+  redis: redis-server
+  mongo: mongod
   web: npm start
+  
