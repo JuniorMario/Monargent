@@ -2,7 +2,7 @@ const mongoClient = require("mongodb").MongoClient
 const ObjectId = require("mongodb").ObjectId
 
 
-mongoClient.connect("mongodb://mongo:27017/datab")
+mongoClient.connect("mongodb://monargent.herokuapp.com:27017/datab")
     .then(conn => global.conn = conn.db("datab")) 
     .catch(err => console.log(err))
   
