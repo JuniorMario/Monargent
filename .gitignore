@@ -2,6 +2,7 @@ node_modules
 datab
 startupbussines
 *.xlsx
-*.gitignore
+*gitignore
 *.eslintrc
 *.log
+package-lock.json

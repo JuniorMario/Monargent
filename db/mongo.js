@@ -2,7 +2,7 @@ const mongoClient = require("mongodb").MongoClient
 const ObjectId = require("mongodb").ObjectId
 
 
-mongoClient.connect("mongodb://monargent.herokuapp.com:27017/datab")
+mongoClient.connect("mongodb+srv://root:root@cluster0-khpu7.gcp.mongodb.net/test?retryWrites=true&w=majority")
     .then(conn => global.conn = conn.db("datab")) 
     .catch(err => console.log(err))
   

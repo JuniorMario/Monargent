@@ -22,9 +22,9 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-
-//var sessionStore = new redisStore({ host: 'redis', port: 6379, client: redis.createClient(process.env.REDIS_URL), ttl: 86400 })
 /*
+var sessionStore = new redisStore({ host: 'redis', port: 6379, client: redis.createClient(process.env.REDIS_URL), ttl: 86400 })
+
 app.use(session({
   secret: 'monargentSession',
   name: '_redis_monargent_session_',
@@ -32,8 +32,8 @@ app.use(session({
   saveUninitialized: true,
   cookie: { secure: false },
   store: sessionStore,
-}));
-*/
+}));*/
+
 app.use('/', require('./router'))
 
 app.use(function(err, req, res, next) {
