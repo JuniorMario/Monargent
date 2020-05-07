@@ -8,7 +8,7 @@ exports.registerUser = async(req, res, next) => {
       } = ProfileValidator.validate(req.body)
 
     if (error) {
-          return res.status('401').json('Um ou mais campos são inválidos')
+          return res.status('401').json('Um ou mais campos são inválidos', error)
     }
     const result = await authServices.insertUser(value)
     return res.json(result)
