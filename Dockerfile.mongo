@@ -1,3 +1,4 @@
 FROM mongo
 
-CMD mongod
+EXPOSE 27017
+CMD mongod --port 27017
