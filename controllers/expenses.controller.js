@@ -2,8 +2,8 @@ const db = require('../db/mongo')
 const expenseService = require('../services/expense.service')
 exports.insertExpense = async(req, res, next) => {
     const result = await expenseService.insertExpense(req.body)
-    res.render("expense", {msg: "Expense was successfully added!"})
-    return res.json(result)
+    //res.render("expense", {msg: "Expense was successfully added!"})
+    return res.json('Saída adicionada com sucesso!')
 }
 
 exports.renderAdd = async(req, res, next) => {

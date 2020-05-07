@@ -23,20 +23,20 @@ console.log('Starting routes...')
 // Incomes routes
 router.post('/add_income', parse('incomes@insertIncome'))
 router.get('/add_income', parse('incomes@renderAdd'))
-router.get('/income/:id', parse('incomes@getIncome'))
+router.get('/incomes/:id', parse('incomes@getIncome'))
 router.get('/incomes', parse('incomes@getIncomes'))
-router.get('/incomes/calc', parse('incomes@calcIncomes'))
-router.delete('/incomes/delete/:id', parse('incomes@deleteIncome'))
-router.put('/income/:id', parse('incomes@updateIncome'))
+router.get('/incomes/calc', parse('incomes@sumIncomes'))
+router.delete('/incomes/:id', parse('incomes@deleteIncome'))
+router.put('/incomes/:id', parse('incomes@updateIncome'))
 
 // Expenses routes
 router.post('/add_expense', parse('expenses@insertExpense'))
 router.get('/add_expense', parse('expenses@renderAdd'))
-router.get('/expense/:id', parse('expenses@findExpense'))
+router.get('/expenses/:id', parse('expenses@findExpense'))
 router.get('/expenses', parse('expenses@findAllExpenses'))
 router.get('/expenses/calc', parse('expenses@calcExpenses'))
-router.delete('/expenses/delete/:id', parse('expenses@deleteExpense'))
-router.put('/expense/:id', parse('expenses@updateExpense'))
+router.delete('/expenses/:id', parse('expenses@deleteExpense'))
+router.put('/expenses/:id', parse('expenses@updateExpense'))
 
 //Operations routes
 router.get('/leftover', parse('operations@calcLeft'))

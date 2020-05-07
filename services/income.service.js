@@ -21,8 +21,9 @@ exports.deleteIncome = async(id, res) => {
     return result
 }
 
-exports.calcIncome = async(res) => {
+exports.calcIncomes = async(res) => {
     const result = await db.findAllIncomes()
+    console.log('-------->', result)
     return result
 }
 

@@ -1,20 +1,28 @@
 const incomeService = require('../services/income.service')
 const path = require('path')
 
+
+
+exports.sumIncomes = async (req, res, next) => {
+    const result = await incomeService.calcIncomes()
+    return res.json(result)
+}
+
 exports.insertIncome = async (req, res, next) => { 
     const result = await incomeService.insertIncome(req.body)
-    res.render("income", {msg: "Income was successfully added!"})
-    return res.json(result)
+   // res.render("income", {msg: "Income was successfully added!"})
+    return res.json('Entrada inserida com sucesso!')
 }
 
 exports.renderAdd = async(req, res, next) => {
     res.render('income', {msg:""})
 }
+/*
 exports.getIncome = async (req, res, next) => {
     const result = await incomeService.getIncome(req.params.id)
     return res.json(result)
 }
-
+*/
 exports.getIncomes = async(req, res, next) => {
     const result = await incomeService.getAllIncomes()
     return res.json(result)
@@ -28,10 +36,6 @@ exports.deleteIncome = async (req, res, next) => {
     return res.json('Income deletado com sucesso!')
 }
 
-exports.calcIncomes = async (req, res, next) => {
-    const result = await incomeService.calcIncome()
-    return res.json(result)
-}
 
 exports.updateIncome = async (req, res, next) => {
     const {result} = await incomeService.updateIncome(req.params.id, req.body)
