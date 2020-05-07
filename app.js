@@ -2,11 +2,11 @@ var express = require('express');
 var path = require('path');
 const bodyParser = require('body-parser')
 var logger = require('morgan');
-global.db = require('./db/mongo')
+//global.db = require('./db/mongo')
 const session = require('express-session')
-const redis = require('redis');
+/*const redis = require('redis');
 const redisStore = require('connect-redis')(session);
-
+*/
 var app = express();
 
 //bodyparser
@@ -23,9 +23,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-var sessionStore = new redisStore({ host: 'redis', port: 6379, client: redis.createClient(process.env.REDIS_URL), ttl: 86400 })
+//var sessionStore = new redisStore({ host: 'redis', port: 6379, client: redis.createClient(process.env.REDIS_URL), ttl: 86400 })
 
-
+/*
 app.use(session({
   secret: 'monargentSession',
   name: '_redis_monargent_session_',
@@ -33,7 +33,7 @@ app.use(session({
   saveUninitialized: true,
   cookie: { secure: false },
   store: sessionStore,
-}));
+}));*/
 
 app.use('/', require('./router'))
 
