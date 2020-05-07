@@ -3,5 +3,5 @@ build:
     web: Dockerfile
     redis: Dockerfile.redis
     mongo: Dockerfile.mongo
-  run:
-    web: npm start
+run:
+  web: npm start
