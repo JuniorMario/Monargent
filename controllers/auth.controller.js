@@ -15,29 +15,16 @@ exports.registerUser = async (req, res, next) => {
 }
 
 exports.loginUser = async (req, res, next) => {
-    let counter = 0;
     const users = await authServices.findUsers()
-
-    users.filter(async(user) => {
-        counter += 1
-        if (user.email === req.body.email) {
-            if (user.password === req.body.password) {
-                req.profile = req.body
-                req.profile.id = counter
-                req.session.token = await authServices.getToken(req.profile)
-                req.session.save()
-
-                return res.json(req.session.token)
-            }
-        }
-   // return res.json("o e-mail não possui cadastro!")
-
-    })
-
- 
-    return res.json("A senha e o email não coincidem!")
-
-
+    const [resp] = users.filter(user => user.email === req.body.email && user.password === req.body.password)
+    if (resp) {
+        req.profile = req.body
+        req.profile.id = resp.id
+        req.session.token = await authServices.getToken(req.profile)
+        req.session.save()
+        return res.json(req.session.token)
+    }
+   return res.json('Não foi possível fazer o login.')
 
 }
 
