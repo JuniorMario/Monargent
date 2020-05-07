@@ -1,8 +1,8 @@
 build:
   docker:
-    web: Dockerfile.web
     redis: Dockerfile.redis
     mongo: Dockerfile.mongo
+    web: Dockerfile.web
 run:
   redis: redis-server
   mongo: mongod
