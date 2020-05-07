@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-var sessionStore = new redisStore({ host: 'monargent.herokuapp.com', port: 6379, client: redis.createClient(process.env.REDIS_URL), ttl: 86400 })
+var sessionStore = new redisStore({ host: 'redis', port: 6379, client: redis.createClient(process.env.REDIS_URL), ttl: 86400 })
 
 app.use(session({
   secret: 'monargentSession',
