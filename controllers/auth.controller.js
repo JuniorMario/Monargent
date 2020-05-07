@@ -30,7 +30,7 @@ exports.loginUser = async (req, res, next) => {
                 return res.json(req.session.token)
             }
         }
-    return res.json("o e-mail não possui cadastro!")
+   // return res.json("o e-mail não possui cadastro!")
 
     })
 

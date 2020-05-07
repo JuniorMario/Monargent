@@ -31,18 +31,18 @@ exports.getAllCategories = async() => {
 }
 
 exports.insertExpense = async(expense) => {
-    return  await global.conn.collection('expenses').insert(expense)
+    return  await global.conn.collection('expenses').insertOne(expense)
 }
 exports.insertIncome = async(expense) => {
-    return  await global.conn.collection('incomes').insert(expense)
+    return  await global.conn.collection('incomes').insertOne(expense)
 }
 
 exports.insertCategory = async(expense) =>  {
-    return  await global.conn.collection('categories').insert(expense)
+    return  await global.conn.collection('categories').insertOne(expense)
 }
 
 exports.insertUser = async(user) =>  {
-    return  await global.conn.collection('users').insert(user)
+    return  await global.conn.collection('users').insertOne(user)
 }
 
 exports.getAllUsers = async() => {
