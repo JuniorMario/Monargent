@@ -19,9 +19,9 @@ exports.findCategory = async(req, res, next) => {
 exports.deleteCategory = async(req, res, next) => {
     const {result} = await categoryService.deleteCategory(req.params.id)
     if (result.n == 0) {
-        res.status('401').json('Não foi possível deletar a Category.')
+        res.status('401').json('Não foi possível deletar a categoria.')
     }
-    res.json('Category deletada com sucesso!')
+    res.json('Categoria deletada com sucesso!')
 }
 
 exports.updateCategory = async(req, res, next) => {
@@ -29,5 +29,5 @@ exports.updateCategory = async(req, res, next) => {
     if (result.n == 0) {
         res.status('401').json('Não foi possível atualizar a Category.')
     }
-    res.json('Category atualizada com sucesso!')
+    res.json('Categoria atualizada com sucesso!')
 }
